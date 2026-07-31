@@ -7,7 +7,7 @@
 
 <title>DG Telugu Hub</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -20,27 +20,38 @@ font-family:'Poppins',sans-serif;
 
 body{
 
-background:#060611;
+background:#05050d;
 overflow-x:hidden;
+min-height:100vh;
+
 display:flex;
 justify-content:center;
 align-items:center;
-min-height:100vh;
-padding:30px;
+
+padding:35px;
+
+position:relative;
 
 }
 
 body::before{
 
 content:'';
+
 position:fixed;
+
 width:420px;
 height:420px;
-background:#7b3cff;
+
+background:#8d35ff;
+
+filter:blur(180px);
+
 border-radius:50%;
-filter:blur(170px);
+
+left:-140px;
 top:-120px;
-left:-150px;
+
 opacity:.45;
 
 }
@@ -48,14 +59,21 @@ opacity:.45;
 body::after{
 
 content:'';
+
 position:fixed;
+
 width:420px;
 height:420px;
-background:#45a4ff;
+
+background:#47a6ff;
+
+filter:blur(180px);
+
 border-radius:50%;
-filter:blur(170px);
-right:-150px;
+
+right:-140px;
 bottom:-120px;
+
 opacity:.45;
 
 }
@@ -63,26 +81,29 @@ opacity:.45;
 .card{
 
 position:relative;
+
 width:100%;
-max-width:470px;
-
-background:rgba(18,20,38,.82);
-
-border:1px solid rgba(255,255,255,.08);
-
-border-radius:36px;
+max-width:500px;
 
 padding:55px 35px;
 
+border-radius:35px;
+
+background:rgba(17,18,35,.78);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(25px);
+
 text-align:center;
 
-backdrop-filter:blur(22px);
-
 box-shadow:
-0 0 0 1px rgba(255,255,255,.03),
-0 0 45px rgba(120,80,255,.35);
 
-animation:fade 1s ease;
+0 0 25px rgba(132,78,255,.45),
+
+0 0 60px rgba(90,160,255,.15);
+
+animation:fade 1s;
 
 }
 
@@ -91,7 +112,7 @@ animation:fade 1s ease;
 from{
 
 opacity:0;
-transform:translateY(25px);
+transform:translateY(35px);
 
 }
 
@@ -104,40 +125,46 @@ transform:translateY(0);
 
 }
 
-.smallTop{
+.smallTitle{
 
-letter-spacing:7px;
+letter-spacing:8px;
+
 font-size:13px;
-color:#6ec5ff;
-margin-bottom:30px;
+
+color:#68c4ff;
+
+margin-bottom:28px;
 
 }
 
-.logoWrap{
+.logoBox{
 
 width:190px;
 height:190px;
+
 margin:auto;
 
 padding:7px;
 
 border-radius:50%;
 
-background:linear-gradient(135deg,#8f3cff,#59b2ff);
+background:linear-gradient(135deg,#903cff,#53acff);
 
 box-shadow:
-0 0 18px #8b3dff,
-0 0 50px rgba(120,80,255,.65);
 
-animation:float 4s infinite ease-in-out;
+0 0 18px #8a43ff,
+
+0 0 55px rgba(123,80,255,.6);
+
+animation:float 4s ease-in-out infinite;
 
 }
 
 @keyframes float{
 
-0%{transform:translateY(0px);}
-50%{transform:translateY(-12px);}
-100%{transform:translateY(0px);}
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
 
 }
 
@@ -158,6 +185,7 @@ background:#111;
 
 width:100%;
 height:100%;
+
 object-fit:cover;
 
 }
@@ -172,7 +200,7 @@ font-weight:800;
 
 line-height:1.05;
 
-background:linear-gradient(#ffffff,#bb9dff);
+background:linear-gradient(#fff,#c09fff);
 
 -webkit-background-clip:text;
 
@@ -187,9 +215,9 @@ height:5px;
 
 margin:24px auto;
 
-border-radius:30px;
+border-radius:20px;
 
-background:linear-gradient(90deg,#8c3fff,#5aaeff);
+background:linear-gradient(90deg,#8f3cff,#5caeff);
 
 }
 
@@ -207,13 +235,17 @@ margin-bottom:35px;
 
 .desc span{
 
-color:#64c5ff;
-font-weight:700;.button{
+color:#69c6ff;
+
+font-weight:700;
+
+}.button{
 
 display:block;
+
 width:100%;
 
-padding:20px;
+padding:22px;
 
 border-radius:18px;
 
@@ -225,33 +257,69 @@ font-weight:700;
 
 color:#fff;
 
-background:linear-gradient(90deg,#8f3cff,#4ea8ff);
+background:linear-gradient(90deg,#8f3cff,#55a8ff);
 
 box-shadow:
-0 0 20px rgba(140,70,255,.5),
-0 0 40px rgba(70,150,255,.3);
+
+0 0 20px rgba(143,60,255,.5),
+
+0 0 45px rgba(85,168,255,.35);
 
 transition:.35s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.button::before{
+
+content:'';
+
+position:absolute;
+
+top:0;
+
+left:-120%;
+
+width:60%;
+
+height:100%;
+
+background:rgba(255,255,255,.25);
+
+transform:skewX(-25deg);
+
+transition:.7s;
+
+}
+
+.button:hover::before{
+
+left:150%;
 
 }
 
 .button:hover{
 
-transform:translateY(-4px) scale(1.03);
+transform:translateY(-4px);
 
 box-shadow:
-0 0 35px rgba(140,70,255,.8),
-0 0 60px rgba(70,150,255,.6);
+
+0 0 30px rgba(143,60,255,.8),
+
+0 0 60px rgba(85,168,255,.55);
 
 }
 
 .note{
 
-margin-top:20px;
+margin-top:18px;
 
 font-size:15px;
 
-color:#9b9b9b;
+color:#a0a0a0;
 
 }
 
@@ -261,7 +329,7 @@ margin-top:35px;
 
 font-size:13px;
 
-color:#6f6f6f;
+color:#6d6d6d;
 
 }
 
@@ -273,9 +341,10 @@ padding:45px 25px;
 
 }
 
-.logoWrap{
+.logoBox{
 
 width:165px;
+
 height:165px;
 
 }
@@ -308,24 +377,30 @@ font-size:20px;
 
 <div class="card">
 
-<div class="smallTop">
+<div class="smallTitle">
+
 ✦ DG TELUGU HUB ✦
+
 </div>
 
-<div class="logoWrap">
+<div class="logoBox">
 
 <div class="logo">
 
-<img src="logo.png" alt="DG Logo">
+<img src="logo.png" alt="DG Telugu Hub">
 
 </div>
 
 </div>
 
 <div class="title">
+
 DG<br>
+
 TELUGU<br>
+
 HUB
+
 </div>
 
 <div class="line"></div>
@@ -337,13 +412,18 @@ Join our <span>Private Telegram Community</span>
 <br><br>
 
 🚀 Daily Updates<br>
+
 ⚡ Instant Alerts<br>
+
 💬 Telugu Members Only
 
 </div>
 
 <a class="button"
-href="https://t.me/+mmDR9n1SDnxkNjJl">
+
+href="https://t.me/+mmDR9n1SDnxkNjJl"
+
+target="_blank">
 
 JOIN TELEGRAM →
 
@@ -357,7 +437,7 @@ JOIN TELEGRAM →
 
 <div class="footer">
 
-Powered by DG Telugu Hub
+© 2026 DG Telugu Hub
 
 </div>
 
@@ -366,6 +446,3 @@ Powered by DG Telugu Hub
 </body>
 
 </html>
-
-}
-  
