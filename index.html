@@ -1,464 +1,165 @@
-don't<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>DG Telugu Hub</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
 <style>
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+  box-sizing:border-box;
 }
 
 body{
-
-background:#05050d;
-overflow-x:hidden;
-min-height:100vh;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-padding:35px;
-
-position:relative;
-
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#050505;
+  color:white;
+  text-align:center;
 }
 
-body::before{
-
-content:'';
-
-position:fixed;
-
-width:420px;
-height:420px;
-
-background:#8d35ff;
-
-filter:blur(180px);
-
-border-radius:50%;
-
-left:-140px;
-top:-120px;
-
-opacity:.45;
-
-}
-
-body::after{
-
-content:'';
-
-position:fixed;
-
-width:420px;
-height:420px;
-
-background:#47a6ff;
-
-filter:blur(180px);
-
-border-radius:50%;
-
-right:-140px;
-bottom:-120px;
-
-opacity:.45;
-
-}
-
-.card{
-
-position:relative;
-
-width:100%;
-max-width:500px;
-
-padding:55px 35px;
-
-border-radius:35px;
-
-background:rgba(17,18,35,.78);
-
-border:1px solid rgba(255,255,255,.08);
-
-backdrop-filter:blur(25px);
-
-text-align:center;
-
-box-shadow:
-
-0 0 25px rgba(132,78,255,.45),
-
-0 0 60px rgba(90,160,255,.15);
-
-animation:fade 1s;
-
-}
-
-@keyframes fade{
-
-from{
-
-opacity:0;
-transform:translateY(35px);
-
-}
-
-to{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
-}
-
-.smallTitle{
-
-letter-spacing:8px;
-
-font-size:13px;
-
-color:#68c4ff;
-
-margin-bottom:28px;
-
-}
-
-.logoBox{
-
-width:190px;
-height:190px;
-
-margin:auto;
-
-padding:7px;
-
-border-radius:50%;
-
-background:linear-gradient(135deg,#903cff,#53acff);
-
-box-shadow:
-
-0 0 18px #8a43ff,
-
-0 0 55px rgba(123,80,255,.6);
-
-animation:float 4s ease-in-out infinite;
-
-}
-
-@keyframes float{
-
-0%{transform:translateY(0);}
-50%{transform:translateY(-10px);}
-100%{transform:translateY(0);}
-
+.container{
+  width:100%;
+  max-width:420px;
+  margin:auto;
+  padding:25px 15px;
 }
 
 .logo{
-
-width:100%;
-height:100%;
-
-border-radius:50%;
-
-overflow:hidden;
-
-background:#111;
-
+  font-size:32px;
+  font-weight:bold;
+  color:#00ff66;
+  margin-top:20px;
 }
 
-.logo img{
-
-width:100%;
-height:100%;
-
-object-fit:cover;
-
+.tagline{
+  color:#ccc;
+  font-size:18px;
+  margin-top:10px;
 }
 
-.title{
-
-margin-top:35px;
-
-font-size:62px;
-
-font-weight:800;
-
-line-height:1.05;
-
-background:linear-gradient(#fff,#c09fff);
-
--webkit-background-clip:text;
-
--webkit-text-fill-color:transparent;
-
+.phone{
+  width:230px;
+  height:420px;
+  background:#111;
+  border:5px solid #333;
+  border-radius:30px;
+  margin:30px auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 0 25px #00ff66;
 }
 
-.line{
-
-width:90px;
-height:5px;
-
-margin:24px auto;
-
-border-radius:20px;
-
-background:linear-gradient(90deg,#8f3cff,#5caeff);
-
+.phone-text{
+  color:#00ff66;
+  font-size:22px;
+  font-weight:bold;
 }
 
-.desc{
-
-font-size:19px;
-
-line-height:1.8;
-
-color:#d7d7d7;
-
-margin-bottom:35px;
-
+.btn{
+  display:block;
+  width:90%;
+  margin:20px auto;
+  padding:16px;
+  background:#00ff66;
+  color:black;
+  text-decoration:none;
+  font-size:18px;
+  font-weight:bold;
+  border-radius:30px;
 }
 
-.desc span{
-
-color:#69c6ff;
-
-font-weight:700;
-
-}.button{
-
-display:block;
-
-width:100%;
-
-padding:22px;
-
-border-radius:18px;
-
-text-decoration:none;
-
-font-size:22px;
-
-font-weight:700;
-
-color:#fff;
-
-background:linear-gradient(90deg,#8f3cff,#55a8ff);
-
-box-shadow:
-
-0 0 20px rgba(143,60,255,.5),
-
-0 0 45px rgba(85,168,255,.35);
-
-transition:.35s;
-
-position:relative;
-
-overflow:hidden;
-
+.card{
+  background:#111;
+  padding:20px;
+  margin-top:25px;
+  border-radius:15px;
 }
 
-.button::before{
-
-content:'';
-
-position:absolute;
-
-top:0;
-
-left:-120%;
-
-width:60%;
-
-height:100%;
-
-background:rgba(255,255,255,.25);
-
-transform:skewX(-25deg);
-
-transition:.7s;
-
+.card h2{
+  color:#00ff66;
 }
 
-.button:hover::before{
-
-left:150%;
-
-}
-
-.button:hover{
-
-transform:translateY(-4px);
-
-box-shadow:
-
-0 0 30px rgba(143,60,255,.8),
-
-0 0 60px rgba(85,168,255,.55);
-
-}
-
-.note{
-
-margin-top:18px;
-
-font-size:15px;
-
-color:#a0a0a0;
-
+.card p{
+  color:#ddd;
+  font-size:16px;
 }
 
 .footer{
-
-margin-top:35px;
-
-font-size:13px;
-
-color:#6d6d6d;
-
-}
-
-@media(max-width:480px){
-
-.card{
-
-padding:45px 25px;
-
-}
-
-.logoBox{
-
-width:165px;
-
-height:165px;
-
-}
-
-.title{
-
-font-size:48px;
-
-}
-
-.desc{
-
-font-size:17px;
-
-}
-
-.button{
-
-font-size:20px;
-
-}
-
+  margin-top:30px;
+  color:#777;
+  font-size:14px;
 }
 
 </style>
+</head>
 
-</head><!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1522279042560315');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1522279042560315&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
 
 <body>
 
-<div class="card">
-
-<div class="smallTitle">
-
-✦ DG TELUGU HUB ✦
-
-</div>
-
-<div class="logoBox">
+<div class="container">
 
 <div class="logo">
-
-<img src="logo.png" alt="DG Telugu Hub">
-
+DG Telugu Hub
 </div>
 
+<div class="tagline">
+🚀 Smart Prediction Experience
 </div>
 
-<div class="title">
 
-DG<br>
-
-TELUGU<br>
-
-HUB
-
+<div class="phone">
+<div class="phone-text">
+DG APP
+</div>
 </div>
 
-<div class="line"></div>
 
-<div class="desc">
-
-Join our <span>Private Telegram Community</span>
-
-<br><br>
-
-🚀 Daily Updates<br>
-
-⚡ Instant Alerts<br>
-
-💬 Telugu Members Only
-
-</div>
-
-<a class="button"
-
-href="https://t.me/+mmDR9n1SDnxkNjJl"
-
-target="_blank">
-
-JOIN TELEGRAM →
-
+<a class="btn" href="#">
+📱 DOWNLOAD APK
 </a>
 
-<div class="note">
 
-100% Free • Private Channel
+<div class="card">
+
+<h2>Why Choose DG?</h2>
+
+<p>
+⚡ Fast Performance
+</p>
+
+<p>
+🛡️ Secure & Easy To Use
+</p>
+
+<p>
+📊 Live Signals Experience
+</p>
 
 </div>
 
+
+<div class="card">
+
+<h2>Ready To Start?</h2>
+
+<p>
+Download the latest version and enjoy the experience.
+</p>
+
+<a class="btn" href="#">
+DOWNLOAD NOW
+</a>
+
+</div>
+
+
 <div class="footer">
-
 © 2026 DG Telugu Hub
-
 </div>
 
 </div>
 
 </body>
-
-</html>
+  </html>
